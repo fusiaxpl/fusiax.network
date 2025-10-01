@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>fusiax.network</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      /* Tło z obrazkiem kratka.jpg z folderu img */
+      background-image: url('img/space.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      color: limegreen;
+      text-align: center;
+      padding-top: 15px;
+      font-family: 'VT323', monospace;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #00ff00;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>fusiax.network</h1>
+  <p>
+    witaj na fusiax.network - jest to miejsce dla
+    prawdziwych og internetu, z klimatem i zajawką!
+  </p>
+  <p>  
+    ================================================
+  </p>
+  <p class="about">
+    o mnie:
+  </p>
+  <p class="about">
+    nick: fusiaxpl
+  </p>
+  <p class="about">
+    wiek: 15
+  </p>
+  <p class="about">
+    zainteresowania/hobby: jazda na desce, muzyka, historia, retro
+  </p>
+  <p class="about">
+    ulubione gry: half-life, GTA San Andreas
+  </p>
+  <p class="about">
+    ulubione filmy: star wars (bez sequeli), 8 mila, jestes bogiem
+  </p>
+  <p class="about">
+    ulubieni wykonawcy: eminem, Stanisław Grzesiuk, wiśnia zpw
+  </p>
+  <p>  
+    =================================================
+  </p>
+</body>
+</html>
+
+<script>
+  // Ładowanie starych wiadomości
+  window.onload = function() {
+    let messages = JSON.parse(localStorage.getItem("shoutbox")) || [];
+    messages.forEach(msg => displayMessage(msg.user, msg.text));
+  }
+
+  // Dodawanie nowej wiadomości
+  function addMessage() {
+    let user = document.getElementById("username").value;
+    let text = document.getElementById("message").value;
+
+    if(user && text) {
+      let messages = JSON.parse(localStorage.getItem("shoutbox")) || [];
+      let newMsg = {user: user, text: text};
+      messages.push(newMsg);
+      localStorage.setItem("shoutbox", JSON.stringify(messages));
+
+      displayMessage(user, text);
+
+      document.getElementById("message").value = "";
+    }
+  }
+
+  // Wyświetlanie wiadomości w okienku
+  function displayMessage(user, text) {
+    let msgDiv = document.createElement("p");
+    msgDiv.innerHTML = "<strong>" + user + ":</strong> " + text;
+    document.getElementById("messages").appendChild(msgDiv);
+  }
+</script>
+
+<style>
+.top-marquee {
+  position: fixed;     /* zawsze przyklejone do ekranu */
+  top: 0;              /* przy samej górze */
+  left: 0;
+  width: 100%;         /* na całą szerokość */
+  background: black;   /* tło pod tekstem (żeby nie zlewało się) */
+  color: limegreen;    /* kolor tekstu */
+  font-size: 22px;
+  z-index: 9999;       /* żeby zawsze był na wierzchu */
+}
+</style>
+
+<div class="shoutbox">
+  <h2>ksiega gosci</h2>
+  <div id="messages"></div>
+
+  <input type="text" id="username" placeholder="Twój nick">
+  <input type="text" id="message" placeholder="Napisz wiadomość">
+  <button onclick="addMessage()">Wyślij</button>
+</div>
+
+<style>
+  .shoutbox {
+  margin: 30px auto;
+  width: 400px;
+  background: black;
+  border: 2px solid limegreen;
+  padding: 10px;
+  text-align: left;
+  font-family: 'VT323', monospace;
+  color: limegreen;
+}
+
+.shoutbox h2 {
+  text-align: center;
+  border-bottom: 2px dashed limegreen;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+#messages {
+  height: 200px;
+  overflow-y: auto;
+  background: #111;
+  border: 1px solid limegreen;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.shoutbox input {
+  background: black;
+  border: 1px solid limegreen;
+  color: limegreen;
+  font-family: 'VT323', monospace;
+  padding: 5px;
+  margin: 2px;
+}
+
+.shoutbox button {
+  background: black;
+  border: 2px solid limegreen;
+  color: limegreen;
+  font-family: 'VT323', monospace;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.shoutbox button:hover {
+  background: limegreen;
+  color: black;
+}
+
+</style>
+
+
+<div class="gif-column">
+  <img src="img/gifphy.gif" alt="gif1">
+  <img src="img/gifise.gif" alt="gif2">
+  <img src="img/gifence.gif" alt="gif3">
+  <img src="img/gifinja.gif" alt="gif4">
+</div>
+
+<style>
+.gif-column {
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  display: flex;
+  flex-direction: column; /* gify jeden pod drugim */
+  gap: 50px; /* odstęp między gifami */
+}
+
+.gif-column img {
+  width: 150px;
+  height: 150px;
+}
+</style>
+
+<!-- MENU PO PRAWEJ -->
+<div class="menu">
+  <img src="img/pobrane.jpeg" alt="ikona sprzęt" class="menu-icon">
+  <a href="sprzet.html">sprzęt</a>
+  <a href="blog.html">blog</a>
+  <a href="muzyka.html">muzyka</a>
+  <a href="info.html">info</a>
+</div>
+
+<style>
+.menu-icon {
+  width: 80px;    /* szerokość obrazka */
+  height: 75px;   /* wysokość obrazka */
+  margin-bottom: 10px; /* odstęp między obrazkiem a pierwszą zakładką */
+}
+
+.menu {
+  position: absolute;       /* przyklejone do ekranu */
+  top: 100px;            /* odległość od góry */
+  right: 20px;           /* odległość od prawej */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;             /* odstęp między linkami */
+}
+
+.menu a {
+  color: limegreen;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  border: 2px solid limegreen;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: limegreen;
+  color: black;
+}
+</style>
+
+<!-- PRZYCISK POWRÓT DO STRONY GŁÓWNEJ -->
+<a href="index.html" class="home-button">strona główna</a>
+
+
+<style>
+.home-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: limegreen;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  border: 2px solid limegreen;
+  padding: 5px 10px;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.home-button:hover {
+  background: limegreen;
+  color: black;
+}
+
+</style>
+
+<style>
+  .home-button {
+  position: fixed;
+  top: 50px;   /* zamiast 20px */
+  right: 20px;
+  color: limegreen;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  border: 2px solid limegreen;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+</style>
+
+<marquee behavior="scroll" direction="left" scrollamount="5" class="top-marquee">
+  UNDER CONSTRUCTION
+</marquee>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
