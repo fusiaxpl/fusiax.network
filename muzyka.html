@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>fusiax.network</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+  <style>
+     body {
+      margin: 0;
+      /* Tło z obrazkiem kratka.jpg z folderu img */
+      background-image: url('img/space.png');
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: center;
+
+      color: limegreen;
+      text-align: center;
+      padding-top: 15px;
+      font-family: 'VT323', monospace;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 24px;
+      color: #00ff00;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <h1>muzyka</h1>
+  <p>
+    plyty muzyczne do polecenia: <br>
+    WKRÓTCE <br>
+    <br>
+    <br>
+  </p>
+  <p>
+    posluchaj pare moich projektow: <br>
+    <br>
+  </p>
+
+  <audio controls>
+  <source src="music/136-Christmas-Special.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- PRZYCISK POWRÓT DO STRONY GŁÓWNEJ -->
+<a href="index.html" class="home-button">strona główna</a>
+
+<style>
+.home-button {
+  position: fixed;        /* przyklejony do ekranu */
+  top: 20px;              /* odległość od góry */
+  right: 20px;            /* odległość od prawej */
+  color: limegreen;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  border: 2px solid limegreen;
+  padding: 5px 10px;
+  transition: 0.3s;
+  z-index: 1000;          /* żeby zawsze był na wierzchu */
+}
+
+.home-button:hover {
+  background: limegreen;
+  color: black;
+}
+</style>
+
+<style>
+  .home-button {
+  position: fixed;
+  top: 50px;   /* zamiast 20px */
+  right: 20px;
+  color: limegreen;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'VT323', monospace;
+  border: 2px solid limegreen;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+</style>
+
+<marquee behavior="scroll" direction="left" scrollamount="5" class="top-marquee">
+  UNDER CONSTRUCTION
+</marquee>
+
+<style>
+.top-marquee {
+  position: fixed;     /* zawsze przyklejone do ekranu */
+  top: 0;              /* przy samej górze */
+  left: 0;
+  width: 100%;         /* na całą szerokość */
+  background: black;   /* tło pod tekstem (żeby nie zlewało się) */
+  color: limegreen;    /* kolor tekstu */
+  font-size: 22px;
+  z-index: 9999;       /* żeby zawsze był na wierzchu */
+}
+</style>
+
+
+
+
+
